@@ -27,15 +27,24 @@ public class Projectdemo01Application implements CommandLineRunner {
 		addrepo.getalladd().forEach(item ->{
 			System.out.println(item);
 		});
-		
+		System.out.println("-----------------------------------------------------------");
+		addrepo.findByNameLike("%t%").forEach(item ->{
+			System.out.println(item);
+		});
+		System.out.println("-----------------------------------------------------------");
 		userpo.getall().forEach(item->{
 			System.out.println(item);
 		});
 		
+		System.out.println("-----------------------------------------------------------");
+
 		userpo.getAllUserAddress().forEach(item -> {
 			System.out.println(item.getId() + '-' +item.getUsername()+'-'
-					+item.getPassword() + '-' + item.getCity());
+					 + item.getCity());
 		});
+		
+		
+	
 	}
 
 }

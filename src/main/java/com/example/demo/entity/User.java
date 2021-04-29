@@ -3,6 +3,7 @@ package com.example.demo.entity;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -15,9 +16,7 @@ public class User {
 	private String username;
 	private String password;
 	
-	@OneToMany(mappedBy = "user"
-			)
-	 
+	@OneToMany(mappedBy = "user",fetch = FetchType.EAGER)
 	private List<Address> address;
 
 	
@@ -55,7 +54,7 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", username=" + username + ", password=" + password +"]";
+		return "User [id=" + id + ", username=" + username + ", password=" + password +", address=" + address +"]";
 	}
 	
 	

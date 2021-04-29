@@ -16,7 +16,10 @@ public interface UserRepository extends CrudRepository<User, Long>{
 	public List<User> getall();
 	
 	
-	@Query(value = "select a.id, u.username, u.password, a.city  from user u inner join address a on  u.id= a.user_id ",
+	@Query(value = "select a.id, u.username, u.password, a.city "
+			+ " from user u inner join address a on  u.id= a.user_id ",
 			nativeQuery = true)
 	public List<UserAddress>  getAllUserAddress();
+	
+
 }

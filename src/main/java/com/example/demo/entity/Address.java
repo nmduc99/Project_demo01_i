@@ -14,9 +14,11 @@ public class Address {
 	
 	private Long id;
 	private String city;
-	@ManyToOne
+	
+	@ManyToOne 
 	@JoinColumn(name ="user_id")
 	private User user;
+	
 	public Long getId() {
 		return id;
 	}
@@ -37,7 +39,7 @@ public class Address {
 	}
 	@Override
 	public String toString() {
-		return "Address [id=" + id + ", city=" + city + ", user=" + user + "]";
+		return "Address [id=" + id + ", city=" + city +" ]";
 	}
 	
 	

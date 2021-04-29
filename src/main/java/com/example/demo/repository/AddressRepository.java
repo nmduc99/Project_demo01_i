@@ -13,5 +13,7 @@ public interface AddressRepository extends CrudRepository<Address, Long> {
 	@Query(value ="select * from Address",nativeQuery = true)
 	public List<Address> getalladd();
 	
-	
+
+	  @Query(value= "SELECT e FROM Address e WHERE e.city like ?1")
+	 public List<Address> findByNameLike(String name);
 }

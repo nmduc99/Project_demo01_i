@@ -7,7 +7,6 @@ public interface UserAddress {
 	String getId();
 	String getUsername();
 	String getPassword();
-	//List<String> getCities();
 	List <String> getCity();
 	
 }
